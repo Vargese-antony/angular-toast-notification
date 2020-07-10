@@ -1,19 +1,29 @@
-import { animate, state, style, transition, trigger, AnimationTriggerMetadata } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  AnimationTriggerMetadata,
+} from '@angular/animations';
 
 export const notificationAnimations: {
   notificationState: AnimationTriggerMetadata;
 } = {
-  notificationState: trigger('state', [
-    state('hidden', style({
-      opacity: 0,
-      height: 0,
+  notificationState: trigger('EnterLeave', [
+    state('flyIn', style({
+      transform: 'translateX(0)'
     })),
-    state('visible', style({
-      opacity: 1,
-      height: '*',
-    })),
-    transition('hidden => show, show => hidden', [
-      animate('0.25s')
+    transition(':enter', [
+      style({
+        transform: 'translateX(-100%)'
+      }),
+      animate('0.5s 300ms ease-in')
     ]),
+    transition(':leave', [
+      animate('0.3s ease-out', style({
+        transform: 'translateX(100%)'
+      }))
+    ])
   ])
 };

@@ -1,4 +1,13 @@
 noification-container {
-  right: 12px;
-  bottom: 12px;
+  bottom: 60px;
+  position: 'absolute';
+  z-index: 100;
+  left: '-35px';
+  opacity: 0.95;
+  background: #fff;
+  height: 70px;
+  width: 300px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
 }

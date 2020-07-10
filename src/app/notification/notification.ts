@@ -1,5 +1,13 @@
+export enum NotificationType {
+  Success = "Success",
+  InProgress = "InProgress",
+  Error = "Error"
+}
+
 export class Notification {
-  id: string;
+  id?: string;
+  title: string;
   message:string;
-  data: any;
+  type?: NotificationType = NotificationType.Success;
+  clickHandler?: Function;
 }

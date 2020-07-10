@@ -1,7 +1,6 @@
 <div class="noification-container">
   <notification-component *ngFor="let notification of notifications"
-    (click)="click(notification)"
-    (mouseover)="onMouseOver(notification)"
-    (mouseout)="onMouseOut(notification)">
+    [@EnterLeave]="'flyIn'"
+    (click)="clickHandler(notification)">
   </notification-component>
 </div>
